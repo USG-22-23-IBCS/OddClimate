@@ -2,7 +2,7 @@
   
   Completed Homework:
   -
-  09/07/22 README
+09/07/22 README
   
   Personal Projects:
   -
