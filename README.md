@@ -3,6 +3,7 @@
   Completed Homework:
   -
 09/07/22 README
+09/18/22 favoriteAnimal.py
   
   Personal Projects:
   -
