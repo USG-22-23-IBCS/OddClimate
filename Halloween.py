@@ -10,43 +10,39 @@ class House:
 
 
 def randPath(m, num):
-    p = [] #the list that is the path
+    p = []
 
     while (len(p) < num): 
         p = []             
         x = random.randint(0, 4)
         y = random.randint(0, 4)
-        pVal = m[x][y] #house and ratings
-        p.append([x,y]) #added house to list.
-                        #[x][y] is to access a position of a list (outer,inner) 
-                        #[x,y] is a list with 2 elements
-        for i in range(num - 1): #this is within the while loop
+        pVal = m[x][y] 
+        p.append([x,y])
 
-    #lists:--------------------------------------------------
+        for i in range(num - 1): 
+
             neighbors = [[x+1,y], [x-1,y], [x,y+1], [x,y-1]]
             bad = []
-    #--------------------------------------------------------
 
-            for n in neighbors: #literally looks at the neighbors list up there
+            for n in neighbors:
                 if (n[0] > 4) or (n[0] < 0):
                     bad.append(n)
                 elif (n[1] > 4) or (n[1] < 0):
                     bad.append(n)
                 elif n in p:
                     bad.append(n)
-            #basically add things to 'bad' trashcan THEN delete
 
-            for b in bad: #b is each of the neighbors in 'bad'
-                neighbors.remove(b) #"remove the neighbors that are 'b' from neighbors"
+            for b in bad: 
+                neighbors.remove(b) 
                 
-            if len(neighbors) == 0: #if there are no good neighbors left, break loop ↑
-                break               #                                       and try again
+            if len(neighbors) == 0: 
+                break         
 
             nextHouse = random.choice(neighbors)
             p.append(nextHouse)
             x = nextHouse[0]
             y = nextHouse[1]
-            pVal = pVal + m[x][y] #pVal is the total of all houses currently in the path
+            pVal = pVal + m[x][y] 
 
         print("Path:")
         return pVal, p
@@ -63,9 +59,9 @@ def main():
 
     num = int(input("What number of houses do you want to visit?\n "))
 
-    total = 0 #this is the total of
+    total = 0 
     for i in range(5):
-        for j in range(5): #can't use i twice, so j
+        for j in range(5):
             total = total + m[i][j]
 
     average = total/25
@@ -85,27 +81,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-#GREEDY PATH-------------------------------------------
-#! 1. Create a list of the best houses in a sorted order. (different to ^)
-#2. Keep track of pVal (same as ^)
-#3. Pick next house from bestHouses list (different to ^)
-#4. Check to see bad neighbors and if we are stuck. (same as ^)
-#! 5. Pick the best neighbor from the good ones. (different to ^)
-#6. Add neighbor to pack and update x, y and pVal. (same as ^)
-#7. if len(p) == num
-   #return pVal, p
-
-#def greedyPath(m, num):
-    #bestHouses = []
-
-    #for i in range(len(bestHouses)):
-    #p = []
-
-    #start = bestHouses[i]
-    #x = start[0]
-    #y = start[1]
-
-    #for i in range(num - 1):
-    
