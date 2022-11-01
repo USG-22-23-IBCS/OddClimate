@@ -38,18 +38,18 @@ def greedyPath(m, num):
     for i in range(25):
         p = []
 
-        start = bestHouses[i] #best element
-        x = start[0] #1st coordinate of best element. not 0, but the 1st thing
-        y = start[1] #2nd (etc.)
+        start = bestHouses[i] 
+        x = start[0] 
+        y = start[1] 
         pVal = m[x][y]
         p.append(start)
 
 
         for i in range(num - 1):
-            #---------
+            
             neighbors = [[x+1,y], [x-1,y], [x,y+1], [x,y-1]]
             bad = []
-            #---------
+       
             
             for n in neighbors: 
                 if (n[0] > 4) or (n[0] < 0):
