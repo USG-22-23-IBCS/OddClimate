@@ -3,7 +3,7 @@
 
 #When running this program, if you want to make the choice of 'View Bag' or 'No' please stick
 #  with one of them. If you choose 'View Bag', there won't be any code for 'No', and vice versa.
-#     It is taking me a very long time to complete. I will submit the finished version later.
+#     This is taking me a very long time to complete. I will submit the finished version later.
 
 
 class Witchstuffs:
